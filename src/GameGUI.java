@@ -10,19 +10,23 @@ public class GameGUI extends JFrame {
 
     private int columns, rows;
     private Container contentPane = getContentPane();
-    public JPanel pnl;
+    public JPanel pnl, menuPnl;
     private ArrayList<ArrayList<JButton>> btns;
     private ArrayList<String> cubesNotEaten;
     private GameAI ai;
+    private JMenuBar menuBar;
+    private JMenu info;
+    private JMenuItem about,howToPlay,exit;
 
     public GameGUI(Integer w, Integer h, GameAI aii){
         columns = w;
         rows = h;
         ai = aii;
 
+        addMenu();
         pnl = new JPanel();
         pnl.setLayout(new GridBagLayout());
-        contentPane.add(pnl);
+        contentPane.add(pnl,BorderLayout.CENTER);
 
         createChocolate();
         pnl.updateUI();
@@ -30,6 +34,36 @@ public class GameGUI extends JFrame {
         setResizable(false);
         pack();
         setVisible(true);
+    }
+
+    private void addMenu(){
+        menuPnl = new JPanel();
+        menuPnl.setLayout(new BorderLayout());
+        menuBar = new JMenuBar();
+        info = new JMenu("Information");
+        howToPlay = new JMenuItem("How to Play");
+        about = new JMenuItem("About");
+        exit = new JMenuItem("Exit");
+
+        info.add(howToPlay);
+        info.add(about);
+        info.add(exit);
+        menuBar.add(info);
+        menuPnl.add(menuBar);
+        contentPane.add(menuPnl,BorderLayout.NORTH);
+
+        about.addActionListener((ActionEvent ev) -> {
+            String message = "This game is called the Game of Chomp, created by Muhammad Hammad. \n V1.0";
+            JOptionPane.showMessageDialog(null,message,"About",JOptionPane.INFORMATION_MESSAGE);
+        });
+
+        exit.addActionListener((ActionEvent ev) -> System.exit(0));
+
+        howToPlay.addActionListener((ActionEvent ev) -> {
+            String message = "The bar of chocolate is to be eaten however the top left corner has been exchanged with soap.\n " +
+                    "Eat chunks of chocolate from the right and try to eat as much as possible while avoiding the soap.";
+            JOptionPane.showMessageDialog(null,message,"How to Play",JOptionPane.INFORMATION_MESSAGE);
+        });
     }
 
     private void createChocolate(){
