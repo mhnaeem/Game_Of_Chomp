@@ -29,6 +29,7 @@ public class StartScreen extends JFrame {
         mainPanel = new JPanel();
         contentPane.add(mainPanel);
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+        setResizable(false);
     }
 
     private void createButtons(){
@@ -126,7 +127,7 @@ public class StartScreen extends JFrame {
                     JOptionPane.showMessageDialog(null, "Columns or Rows are less than or equal to 0", "Error!", JOptionPane.ERROR_MESSAGE);
                 }
                 else {
-                    new GameGUI(Integer.parseInt(wFld.getText()), Integer.parseInt(hFld.getText()));
+                    new GameAI(Integer.parseInt(wFld.getText()), Integer.parseInt(hFld.getText()));
                     StartScreen.this.dispose();
 
                 }
