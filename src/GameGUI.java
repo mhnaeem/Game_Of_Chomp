@@ -1,3 +1,4 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -112,6 +113,7 @@ public class GameGUI extends JFrame {
             if (btn.getName().equals(btnName)) {
                 btn.setForeground(Color.black);
                 btn.setText("X");
+                btn.setFont(new Font("TimesRoman", Font.BOLD, 25));
                 Timer timer = new Timer();
                 timer.schedule( new TimerTask() {
                     @Override
@@ -119,7 +121,7 @@ public class GameGUI extends JFrame {
                         btn.setText("");
                         btn.doClick();
                     }
-                }, 1500);
+                }, 1700);
             }
         }));
     }
