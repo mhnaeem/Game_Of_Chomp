@@ -142,7 +142,17 @@ public class GameGUI extends JFrame {
             pnl.updateUI();
             if(st.equals("0,0")){
                 //TODO: Game Over
-                JOptionPane.showMessageDialog(null,"Game Over! " + ai.whoseTurn() + " lost the game.", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+                String[] buttons = { "Start Again", "Exit"};
+
+                int rc = JOptionPane.showOptionDialog(null, "Game Over! " + ai.whoseTurn() + " lost the game.", "Game Over",
+                        JOptionPane.WARNING_MESSAGE, 0, null, buttons, buttons[0]);
+                if (rc == 0){
+                    GameGUI.this.dispose();
+                    new StartScreen();
+                }
+                if(rc == 1){
+                    System.exit(0);
+                }
             }
             else {
                 ai.changeTurn();
