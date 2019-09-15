@@ -1,5 +1,5 @@
 <h1>Game of Chomp</h1>
-<p>Chomp is a two-player strategy game played on a rectangular chocolate bar made up of smaller square blocks (cells). The players take it in turns to choose one block and "eat it" (remove from the board), together with those that are below it and to its right. The top left block is a peice of soap and the player who eats this loses.</p>
+<p>Chomp is a two-player strategy game played on a rectangular chocolate bar made up of smaller square blocks (cells). The players take it in turns to choose one block and "eat it" (remove from the board), together with those that are below it and to its right. The top left block is a peice of soap and the player who eats this loses.(Description from Wikipedia)</p>
 
 <br>
 
