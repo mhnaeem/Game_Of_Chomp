@@ -11,6 +11,6 @@
 </ol>
 
 <br>
-<h2>Here is the screenshot of the running game:</h2>
+<h2>Here is the screenshot of the running game (in various states):</h2>
 
 ![Alt text](/Game_Of_Chomp.PNG?raw=true "Game_Of_Chomp.PNG")
