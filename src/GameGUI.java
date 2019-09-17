@@ -1,4 +1,3 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -35,6 +34,13 @@ public class GameGUI extends JFrame {
         setResizable(false);
         pack();
         setVisible(true);
+        Timer timer = new Timer();
+        timer.schedule( new TimerTask() {
+            @Override
+            public void run() {
+                pnl.updateUI();
+            }
+        }, 2000);
     }
 
     private void addMenu(){
